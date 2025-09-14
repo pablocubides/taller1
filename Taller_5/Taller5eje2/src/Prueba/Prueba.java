@@ -1,4 +1,4 @@
-package prueba;
+package Prueba;
 
 import vehiculos.Moto;
 

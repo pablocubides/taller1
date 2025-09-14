@@ -9,7 +9,7 @@ public class Moto extends Vehiculo {
     }
     
 
-    public void mostrarMoto() {
+       public void mostrarMoto() {
         System.out.println("Soy una moto de tipo: " + tipo);
     }
 }

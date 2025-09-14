@@ -5,7 +5,7 @@ public class Persona {
     private String nombre;
     int edad;             
 
-    // Constructor
+    
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
@@ -18,5 +18,9 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }    
+     public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+
     }
 }
