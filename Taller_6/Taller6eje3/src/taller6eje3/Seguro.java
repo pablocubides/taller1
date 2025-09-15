@@ -1,39 +1,22 @@
+
 package taller6eje3;
 
-public class Seguro {
-    // ✅ Encapsulado: nadie puede tocarlo directo
+
+
+class Banco {
     private double saldo;
 
-    public Seguro(double saldoInicial) {
-        if (saldoInicial < 0) {
-           throw new IllegalArgumentException("Solo se puede depositar montos positivos.");        }
-        this.saldo = saldoInicial;
-    }
+    public Banco(double saldoInicial) { this.saldo = saldoInicial; }
+    public double getSaldo() { return saldo; }
+    public void depositar(double monto) { if (monto > 0) saldo += monto; }
+    public void retirar(double monto) { if (monto > 0 && monto <= saldo) saldo -= monto; }
+}
 
-    public double consultarSaldo() {
-        return saldo;
-    }
-
-    public void depositar(double cantidad) {
-        if (cantidad <= 0) {
-            throw new IllegalArgumentException("El depósito debe ser positivo.");
-        }
-        saldo += cantidad;
-    }
-
-    public boolean retirar(double cantidad) {
-        if (cantidad <= 0) return false;
-        if (cantidad > saldo) return false;
-        saldo -= cantidad;
-        return true;
-    }
-
+public class Seguro {
     public static void main(String[] args) {
-        Seguro banco = new Seguro(1000);
-        System.out.println("Saldo inicial (seguro): " + banco.consultarSaldo());
-
-        banco.depositar(500);
-        System.out.println("Tras depósito: " + banco.consultarSaldo());
-
+        Banco b = new Banco(1000);
+        b.depositar(500);
+        b.retirar(200);
+        System.out.println("Saldo final: " + b.getSaldo());
     }
 }
